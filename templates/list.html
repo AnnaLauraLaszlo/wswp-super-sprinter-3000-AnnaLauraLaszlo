@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome! | Super Sprinter 3000</title>
+    </head>
+    <body>
+        <h1>Super Sprinter 3000</h1>
+        <a href="/story">Add new User Story</a>
+        <p>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Story Title</th>
+                <th>User Story</th>
+                <th>Acceptance Criteria</th>
+                <th>Business Value</th>
+                <th>Estimation</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                {% for line in datatable %}
+                <tr>
+                {% for item in line %}
+                    <td> {% if item in '0123456789' %}
+
+                        <a href="/story/{{ item }}">{{ item }}</a>
+                        {% else %}
+                        {{ item }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+                </tr>
+                {% endfor %}
+            </tr>
+        </table>
+        </p>
+    </body>
+</html>
